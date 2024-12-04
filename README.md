@@ -19,3 +19,11 @@ Version info is documented in the component's `zag.js` file.
 ## Note on Styles
 
 Component attributes like `[data-part]` have been converted to css ::parts.
+
+# Development Guide
+
+- add `@zag-js/*` component to `package.json`
+- add component to `bundle-script.mjs`
+- run script to compile: `node bundle-script.mjs`
+- create new LWC
+- copy zag component code from `/dist` to a `zag.js` file in new lwc folder

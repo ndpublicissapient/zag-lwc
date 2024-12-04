@@ -1,9 +1,10 @@
-import { LightningElement, api } from 'lwc';
-import { ZagMixin } from 'c/zagMixin';
-import ZagJS from './zag.js'
+import { LightningElement, api } from "lwc";
+import { ZagMixin } from "c/zagMixin";
+import ZagJS from "./zag.js";
 
 export default class ZagTabs extends ZagMixin(LightningElement) {
-  
+  @api itemSelector = "c-zag-tab";
+
   @api set machineContext(value) {
     this._machineContext = value;
     this.connectZag();
@@ -17,10 +18,15 @@ export default class ZagTabs extends ZagMixin(LightningElement) {
   }
 
   async connectZag() {
-    this[ZagMixin.Connect](ZagJS, {
-      id: "1",
-      ...this.machineContext,
-    }, {});
+    this[ZagMixin.Connect](
+      ZagJS,
+      {
+        id: "1",
+        value: 0,
+        ...this.machineContext
+      },
+      {}
+    );
   }
 
   get rootProps() {
@@ -41,14 +47,19 @@ export default class ZagTabs extends ZagMixin(LightningElement) {
 
   tabs = [];
   refreshItems() {
-    this.tabs = [...this.template.querySelectorAll('c-zag-tab')].map((item, idx) => {
-      item.props = this[ZagMixin.Props](this.zagApi.getContentProps({ value: idx }));
-      return {
-        key: item.title,
-        label: item.title,
-        props: this[ZagMixin.Props](this.zagApi.getTriggerProps({ value: idx })),
-      };
-    });
+    this.tabs = [...this.template.querySelectorAll(this.itemSelector)].map(
+      (item, idx) => {
+        item.props = this[ZagMixin.Props](
+          this.zagApi.getContentProps({ value: idx })
+        );
+        return {
+          key: item.title,
+          label: item.title,
+          props: this[ZagMixin.Props](
+            this.zagApi.getTriggerProps({ value: idx })
+          )
+        };
+      }
+    );
   }
-
 }

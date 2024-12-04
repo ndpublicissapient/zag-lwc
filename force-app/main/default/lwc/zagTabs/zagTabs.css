@@ -1,11 +1,26 @@
-@import 'c/zagStyles';
+@import "c/zagStyles";
 
 :host::part(trigger) {
   border: 1px solid #000;
   padding: 0.5rem 1rem;
 }
 
-:host::part(trigger active) {
-  border: 1px solid blue;
+:host::part(trigger selected) {
+  background: green;
   /* Styles for unselected tab */
+}
+
+:host::part(trigger disabled) {
+  border: 1px solid red;
+  /* Styles for disabled tab */
+}
+
+:host::part(trigger):focus {
+  border: 2px solid blue;
+  /* Styles for unselected tab */
+}
+
+:host::part(list focus) {
+  box-shadow: 0 0 0 2px blue;
+  /* Styles for focus within list */
 }
