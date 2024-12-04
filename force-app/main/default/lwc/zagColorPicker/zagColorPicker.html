@@ -1,0 +1,39 @@
+<template>
+
+  <div lwc:if={ready}>
+      <div lwc:ref="root">
+        <label lwc:ref="label">Select Color: {zagApi.valueAsString}</label>
+  
+        <input lwc:ref="hiddenInput" />
+  
+        <div lwc:ref="control">
+          <button lwc:ref="trigger">
+            <div lwc:ref="transparencyGrid"></div>
+            <div lwc:ref="swatch"></div>
+          </button>
+          <input lwc:ref="channelInput" />
+          <input lwc:ref="channelInputAlpha" />
+        </div>
+  
+        <div lwc:ref="positioner">
+          <div lwc:ref="content">
+            <div lwc:ref="area">
+              <div lwc:ref="areaBackground"></div>
+              <div lwc:ref="areaThumb"></div>
+            </div>
+  
+            <div lwc:ref="channelSliderPropsHue">
+              <div lwc:ref="channelSliderTrackHue"></div>
+              <div lwc:ref="channelSliderThumbHue"></div>
+            </div>
+  
+            <div lwc:ref="channelSliderAlpha">
+              <div lwc:ref="transparencyGridAlpha"></div>
+              <div lwc:ref="channelSliderTrackAlpha"></div>
+              <div lwc:ref="channelSliderThumbAlpha"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

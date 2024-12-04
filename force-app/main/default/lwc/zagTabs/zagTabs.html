@@ -1,0 +1,14 @@
+<template>
+  <div lwc:spread={rootProps}>
+    <div lwc:spread={listProps}>
+      <button for:each={tabs} for:item="tab" key={tab.key} lwc:spread={tab.props}>
+        {tab.label}
+      </button>
+    </div>
+    <slot onslotchange={handleSlotChange}>
+      <c-zag-tab title="Example Tab 1"></c-zag-tab>
+      <c-zag-tab title="Example Tab 2"></c-zag-tab>
+      <c-zag-tab title="Example Tab 3"></c-zag-tab>
+    </slot>
+  </div>
+</template>

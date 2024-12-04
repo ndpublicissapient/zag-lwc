@@ -1,0 +1,9 @@
+:host {
+  --transform-origin: top center;
+  --reference-width: 20px;
+  --available-width: 1363px;
+  --available-height: 243px;
+  --x: 337px;
+  --y: 574px;
+  --z-index: auto;
+}

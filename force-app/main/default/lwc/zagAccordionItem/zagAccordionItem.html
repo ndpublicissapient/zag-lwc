@@ -1,0 +1,14 @@
+<template>
+    
+  <div lwc:spread={props}>
+    <h3>
+      <button lwc:spread={triggerProps}>
+        <slot name="trigger">{title}</slot>
+      </button>
+    </h3>
+    <div lwc:spread={contentProps}>
+      <slot name="content">Example Slotted Accordion - ([slot="content"])</slot>
+    </div>
+  </div>
+
+</template>

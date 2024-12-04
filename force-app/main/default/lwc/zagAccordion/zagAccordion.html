@@ -1,0 +1,9 @@
+<template>
+  <div lwc:spread={rootProps}>
+    <slot onslotchange={handleSlotChange}>
+      <c-zag-accordion-item title="Title 1"></c-zag-accordion-item>
+      <c-zag-accordion-item title="Title 2"></c-zag-accordion-item>
+      <c-zag-accordion-item title="Title 3"></c-zag-accordion-item>
+    </slot>
+  </div>
+</template>

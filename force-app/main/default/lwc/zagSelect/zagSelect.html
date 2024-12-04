@@ -1,0 +1,21 @@
+<template>
+  <div lwc:spread={rootProps}>
+    <div lwc:spread={controlProps}>
+      <label class="hide" lwc:spread={labelProps}>{label}</label>
+      <button lwc:spread={triggerProps}>
+        {buttonLabel}
+      </button>
+    </div>
+
+    <div class="relative"><!--portal-->
+      <div lwc:spread={positionerProps}>
+        <ul lwc:spread={contentProps}>
+          <li key={item.value} for:each={formattedOptions} for:item="item" lwc:spread={item.props}>
+            <span>{item.label}</span>
+            <span lwc:spread={item.indicatorProps}>✓</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

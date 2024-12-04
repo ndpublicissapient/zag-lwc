@@ -1,0 +1,56 @@
+@import 'c/zagStyles';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+:host::part(item open) {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+:host::part(item closed) {
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+:host::part(item-trigger) {
+  width: 100%;
+}
+
+:host::part(item-trigger open) {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+:host::part(item-trigger closed) {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+:host::part(item-content open) {
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+:host::part(item-content closed) {
+  padding: 10px;
+  display: none;
+}
+
+/* FOCUS */
+
+::part(item focus) {
+  outline: 2px solid #0078d4;
+}
+
+::part(item-trigger):focus {
+  outline: 2px solid #0078d4;
+}
+
+::part(item-content focus) {
+  outline: 2px solid #0078d4;
+}
