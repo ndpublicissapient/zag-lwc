@@ -1,30 +1,26 @@
 <template>
-
-    <nav lwc:if={ready} lwc:ref="nav">
-        <ul part="list">
-            <li>
-                <a href="#prev" lwc:spread={prevProps}>
-                    <span class="hide">{prevProps.ariaLabel}</span>
-                    <slot name="previous"><span>&lt;</span></slot>
-                </a>
-            </li>
-            <template for:each={pages} for:item="page">
-                <li lwc:if={page.isPage} key={page.value}>
-                    <a href={page.href} lwc:spread={page.props}>
-                        {page.value}
-                    </a>
-                </li>
-                <li lwc:else key={page.ellipsisKey}>
-                    <span lwc:spread={page.ellipsisProps}>&#8230;</span>
-                </li>
-            </template>
-            <li>
-                <a href="#next" lwc:spread={nextProps}>
-                    <span class="hide">{nextProps.ariaLabel}</span>
-                    <slot name="next"><span>&gt;</span></slot>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
+  <nav lwc:if={ready} lwc:ref="nav">
+    <ul part="list">
+      <li>
+        <a href="#prev" lwc:spread={prevProps}>
+          <span class="hide">{prevProps.ariaLabel}</span>
+          <slot name="previous"><span>&lt;</span></slot>
+        </a>
+      </li>
+      <template for:each={pages} for:item="page">
+        <li lwc:if={page.isPage} key={page.value}>
+          <a href={page.href} lwc:spread={page.props}> {page.value} </a>
+        </li>
+        <li lwc:else key={page.ellipsisKey}>
+          <span lwc:spread={page.ellipsisProps}>{ellipsisTextValue}</span>
+        </li>
+      </template>
+      <li>
+        <a href="#next" lwc:spread={nextProps}>
+          <span class="hide">{nextProps.ariaLabel}</span>
+          <slot name="next"><span>&gt;</span></slot>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </template>

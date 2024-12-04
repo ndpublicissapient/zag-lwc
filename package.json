@@ -16,19 +16,35 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.16.0",
     "@lwc/eslint-plugin-lwc": "^1.1.2",
     "@prettier/plugin-xml": "^3.2.2",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-replace": "^6.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
     "@salesforce/eslint-config-lwc": "^3.2.3",
     "@salesforce/eslint-plugin-aura": "^2.0.0",
     "@salesforce/eslint-plugin-lightning": "^1.0.0",
     "@salesforce/sfdx-lwc-jest": "^5.1.0",
-    "eslint": "^9.9.1",
+    "@zag-js/accordion": "^0.77.1",
+    "@zag-js/avatar": "^0.77.1",
+    "@zag-js/carousel": "^0.77.1",
+    "@zag-js/checkbox": "^0.77.1",
+    "@zag-js/color-picker": "^0.77.1",
+    "@zag-js/combobox": "^0.77.1",
+    "@zag-js/pagination": "^0.77.1",
+    "@zag-js/react": "^0.77.1",
+    "@zag-js/select": "^0.77.1",
+    "@zag-js/tabs": "^0.77.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jest": "^28.8.1",
     "husky": "^9.1.5",
     "lint-staged": "^15.1.0",
     "prettier": "^3.1.0",
-    "prettier-plugin-apex": "^2.0.1"
+    "prettier-plugin-apex": "^2.0.1",
+    "rollup": "^4.25.0"
   },
   "lint-staged": {
     "**/*.{cls,cmp,component,css,html,js,json,md,page,trigger,xml,yaml,yml}": [
